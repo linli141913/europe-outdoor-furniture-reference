@@ -1,0 +1,14 @@
+part_id,part_name,qty,material,thickness_mm,finished_size_mm,edge_radius_mm,hole_strategy,notes
+S01-L,Left side frame,1,Foamed PE / HDPE sheet,25,650 x 820 profile,R6-R10,M6 clearance + countersink,Mirror of S01-R; integrated front leg rear post seat rail and arm support
+S01-R,Right side frame,1,Foamed PE / HDPE sheet,25,650 x 820 profile,R6-R10,M6 clearance + countersink,Mirror of S01-L
+A01,Arm cap board,2,Foamed PE / HDPE sheet,25,590 x 82,R10,M6 clearance slots,Separate replaceable arm surface
+C01,Front seat cross rail,1,Foamed PE / HDPE sheet,25,610 x 90,R4,M6 structural holes,Supports front ends of seat slats
+C02,Rear seat cross rail,1,Foamed PE / HDPE sheet,25,610 x 85,R4,M6 structural holes,Supports rear ends of seat slats and back lower area
+C03,Lower front stretcher,1,Foamed PE / HDPE sheet,25,610 x 60,R4,M6 structural holes,Reduces side-to-side racking at front legs
+C04,Lower rear stretcher,1,Foamed PE / HDPE sheet,25,610 x 70,R4,M6 structural holes,Connects rear legs and stiffens back area
+G01,Inside triangular corner gusset,4,Foamed PE / HDPE sheet,25,130 x 130 right triangle,R4,M6 clearance holes,Hidden inside four lower frame corners
+B01,Back top rail,1,Foamed PE / HDPE sheet,25,610 x 90,R6,M6 structural holes,Top rail of back assembly
+B02,Back bottom rail,1,Foamed PE / HDPE sheet,25,610 x 80,R6,M6 structural holes,Bottom rail of back assembly
+SE01,Seat slat,6,Foamed PE / HDPE sheet,20,610 x 70,R8,5 mm countersunk screw slots,Leave 15-17 mm drainage gaps
+BA01,Vertical back slat,5,Foamed PE / HDPE sheet,20,520 x 64,R10,5 mm countersunk screw slots,Evenly spaced vertical slats
+SP01,Back angle spacer block,2,Foamed PE / HDPE sheet,25,90 x 45,R4,M6 clearance holes,Sets back angle and prevents twist

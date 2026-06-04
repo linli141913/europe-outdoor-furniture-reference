@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/reference_gallery/index.html"
+    },
+    {
+      "source": "/favorites",
+      "destination": "/reference_gallery/favorites.html"
+    }
+  ]
+}

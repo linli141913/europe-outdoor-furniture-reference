@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="650" viewBox="0 0 760 650">
+  <title>20 mm cut sheet</title>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <style>
+    .title { font: 700 24px Arial, sans-serif; fill: #111827; }
+    .label { font: 600 13px Arial, sans-serif; fill: #111827; }
+    .small { font: 12px Arial, sans-serif; fill: #374151; }
+    .dim { font: 12px Arial, sans-serif; fill: #2563eb; }
+    .part { font: 11px Arial, sans-serif; fill: #111827; }
+  </style>
+<text x="40" y="42" class="title" text-anchor="start">20 mm Sheet - Seat and Back Slats</text>
+<text x="40" y="66" class="small" text-anchor="start">Slats are repeat parts with rounded ends and slotted screw holes for thermal movement.</text>
+<rect x="50" y="95" width="610.0" height="450.0" rx="6" fill="#eef2f7" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="85" y="130" width="305.0" height="35.0" rx="8" fill="#8b5e3c" stroke="#111827" stroke-width="1.5"/>
+<text x="97" y="154" class="part" text-anchor="start">SE01 seat slat 1 - 610 x 70</text>
+<ellipse cx="112.5" cy="147.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="362.5" cy="147.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="85" y="180" width="305.0" height="35.0" rx="8" fill="#8b5e3c" stroke="#111827" stroke-width="1.5"/>
+<text x="97" y="204" class="part" text-anchor="start">SE01 seat slat 2 - 610 x 70</text>
+<ellipse cx="112.5" cy="197.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="362.5" cy="197.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="85" y="230" width="305.0" height="35.0" rx="8" fill="#8b5e3c" stroke="#111827" stroke-width="1.5"/>
+<text x="97" y="254" class="part" text-anchor="start">SE01 seat slat 3 - 610 x 70</text>
+<ellipse cx="112.5" cy="247.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="362.5" cy="247.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="85" y="280" width="305.0" height="35.0" rx="8" fill="#8b5e3c" stroke="#111827" stroke-width="1.5"/>
+<text x="97" y="304" class="part" text-anchor="start">SE01 seat slat 4 - 610 x 70</text>
+<ellipse cx="112.5" cy="297.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="362.5" cy="297.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="85" y="330" width="305.0" height="35.0" rx="8" fill="#8b5e3c" stroke="#111827" stroke-width="1.5"/>
+<text x="97" y="354" class="part" text-anchor="start">SE01 seat slat 5 - 610 x 70</text>
+<ellipse cx="112.5" cy="347.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="362.5" cy="347.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="85" y="380" width="305.0" height="35.0" rx="8" fill="#8b5e3c" stroke="#111827" stroke-width="1.5"/>
+<text x="97" y="404" class="part" text-anchor="start">SE01 seat slat 6 - 610 x 70</text>
+<ellipse cx="112.5" cy="397.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="362.5" cy="397.5" rx="10" ry="4" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="435" y="130" width="32.0" height="260.0" rx="8" fill="#9a6a43" stroke="#111827" stroke-width="1.5"/>
+<text x="451" y="375" class="part" text-anchor="middle" transform="rotate(-90 451 375)">BA01 1</text>
+<ellipse cx="451.0" cy="152.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="451.0" cy="367.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="480" y="130" width="32.0" height="260.0" rx="8" fill="#9a6a43" stroke="#111827" stroke-width="1.5"/>
+<text x="496" y="375" class="part" text-anchor="middle" transform="rotate(-90 496 375)">BA01 2</text>
+<ellipse cx="496.0" cy="152.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="496.0" cy="367.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="525" y="130" width="32.0" height="260.0" rx="8" fill="#9a6a43" stroke="#111827" stroke-width="1.5"/>
+<text x="541" y="375" class="part" text-anchor="middle" transform="rotate(-90 541 375)">BA01 3</text>
+<ellipse cx="541.0" cy="152.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="541.0" cy="367.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="570" y="130" width="32.0" height="260.0" rx="8" fill="#9a6a43" stroke="#111827" stroke-width="1.5"/>
+<text x="586" y="375" class="part" text-anchor="middle" transform="rotate(-90 586 375)">BA01 4</text>
+<ellipse cx="586.0" cy="152.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="586.0" cy="367.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<rect x="615" y="130" width="32.0" height="260.0" rx="8" fill="#9a6a43" stroke="#111827" stroke-width="1.5"/>
+<text x="631" y="375" class="part" text-anchor="middle" transform="rotate(-90 631 375)">BA01 5</text>
+<ellipse cx="631.0" cy="152.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<ellipse cx="631.0" cy="367.5" rx="4" ry="10" fill="#f8fafc" stroke="#111827" stroke-width="1"/>
+<text x="40" y="590" class="label" text-anchor="start">20 mm parts: 6 seat slats and 5 vertical back slats.</text>
+<text x="40" y="612" class="small" text-anchor="start">Slot direction follows slat length. Do not clamp slats so tightly that expansion is locked.</text>
+</svg>

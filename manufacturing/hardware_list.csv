@@ -1,0 +1,8 @@
+hardware_id,item,qty,spec,material,used_for,notes
+H01,Structural bolt,28,M6 x 50 mm countersunk socket bolt,A2/A4 stainless,Side frames to cross rails back assembly and arm boards,Use with barrel nut or threaded insert
+H02,Barrel nut or threaded insert,28,M6,A2/A4 stainless or brass,Receiving H01,Prefer barrel nuts for repeated assembly
+H03,Slat screw,44,5 x 45 mm countersunk screw for plastic,A2/A4 stainless,Seat and back slats,Use oversized or slotted clearance in slats for thermal movement
+H04,Washer,28,M6 thin washer,A2/A4 stainless,High-load bolt locations,Use where countersink is not preferred
+H05,Screw cap plug,28,12-14 mm round cap,HDPE / PE,Visible bolt points,Optional color-matched cap
+H06,Glide foot,4,Adjustable nylon or HDPE glide,Nylon / HDPE,Bottom of four feet,Optional; useful on tile or balcony floors
+H07,Thread locker,1,Medium strength removable,Plastic-safe,Structural bolts,Optional; test compatibility with PE / HDPE first

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="660" viewBox="0 0 1050 660">
+  <title>Flat pack layout</title>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <style>
+    .title { font: 700 24px Arial, sans-serif; fill: #111827; }
+    .label { font: 600 13px Arial, sans-serif; fill: #111827; }
+    .small { font: 12px Arial, sans-serif; fill: #374151; }
+    .dim { font: 12px Arial, sans-serif; fill: #2563eb; }
+    .part { font: 11px Arial, sans-serif; fill: #111827; }
+  </style>
+<text x="40" y="42" class="title" text-anchor="start">Flat-Pack Layout</text>
+<text x="40" y="66" class="small" text-anchor="start">All structural parts are flat CNC panels; no molded shell, no woven panels, no folding frame.</text>
+<rect x="90" y="120" width="720" height="420" rx="12" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+<text x="450" y="102" class="dim" text-anchor="middle">Suggested carton inside: 870 x 700 x 140 mm</text>
+<rect x="155" y="180" width="403.0" height="57.400000000000006" rx="5" fill="#4b5563" stroke="#111827" stroke-width="1.5" opacity="0.92"/>
+<text x="576.0" y="200" class="label" text-anchor="start">Side frames x2, 25 mm</text>
+<rect x="180" y="232" width="403.0" height="28" rx="5" fill="#64748b" stroke="#111827" stroke-width="1.5" opacity="0.92"/>
+<text x="601.0" y="252" class="label" text-anchor="start">Rails and arms, 25 mm</text>
+<rect x="205" y="284" width="403.0" height="28" rx="5" fill="#8b5e3c" stroke="#111827" stroke-width="1.5" opacity="0.92"/>
+<text x="626.0" y="304" class="label" text-anchor="start">Seat slats x6, 20 mm</text>
+<rect x="230" y="336" width="347.2" height="28" rx="5" fill="#9a6a43" stroke="#111827" stroke-width="1.5" opacity="0.92"/>
+<text x="595.2" y="356" class="label" text-anchor="start">Back slats x5, 20 mm</text>
+<rect x="255" y="388" width="136.4" height="28" rx="5" fill="#334155" stroke="#111827" stroke-width="1.5" opacity="0.92"/>
+<text x="409.4" y="408" class="label" text-anchor="start">Hardware pouch + guide</text>
+<text x="95" y="590" class="label" text-anchor="start">Packing order: protect arm surfaces; keep hardware isolated; add cardboard between boards.</text>
+<text x="95" y="614" class="small" text-anchor="start">Longest part remains the side frame; all other pieces stack inside the same footprint.</text>
+</svg>
