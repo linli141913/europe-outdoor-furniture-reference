@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图库删除管理后台</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17201b;
+      --muted: #66706a;
+      --line: #d9dfd9;
+      --soft: #f5f7f4;
+      --accent: #2f6b57;
+      --danger: #b8323a;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #fbfcfa;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 252, 250, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      backdrop-filter: blur(14px);
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 24px;
+    }
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 38px);
+      letter-spacing: 0;
+      line-height: 1.1;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .btn, .link-btn {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      font: inherit;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 700;
+    }
+    .btn.danger {
+      border-color: #e6c7ca;
+      color: var(--danger);
+    }
+    .btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+    .panel {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto auto;
+      gap: 10px;
+      align-items: center;
+      margin-top: 18px;
+    }
+    input {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 0 13px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+    }
+    main.wrap { padding-top: 24px; }
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .summary strong { color: var(--ink); }
+    .notice {
+      display: none;
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f1f4ef;
+      color: #3f4b44;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .notice.is-error {
+      border-color: #efc5c8;
+      background: #fff3f4;
+      color: #7a2229;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    article {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      min-height: 132px;
+    }
+    .thumb {
+      background: var(--soft);
+      border-right: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 132px;
+    }
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .fallback {
+      color: var(--muted);
+      font-size: 12px;
+      padding: 8px;
+      text-align: center;
+    }
+    .body {
+      padding: 12px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .empty {
+      display: none;
+      padding: 46px 0;
+      text-align: center;
+      color: var(--muted);
+    }
+    @media (max-width: 720px) {
+      .wrap { padding-left: 14px; padding-right: 14px; }
+      .title-row { display: block; }
+      .nav { justify-content: flex-start; margin-top: 14px; }
+      .panel { grid-template-columns: 1fr; }
+      article { grid-template-columns: 84px minmax(0, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title-row">
+        <div>
+          <h1>图库删除管理后台</h1>
+          <div class="subtitle">查看 Vercel 云端隐藏记录，恢复误删产品。恢复后刷新图库即可重新显示。</div>
+        </div>
+        <nav class="nav" aria-label="页面切换">
+          <a class="link-btn" href="/reference_gallery">返回图库</a>
+          <button class="btn primary" id="refresh" type="button">刷新记录</button>
+        </nav>
+      </div>
+      <div class="panel">
+        <input id="token" type="password" autocomplete="off" placeholder="后台 token，可选：配置 GALLERY_ADMIN_TOKEN 后填写">
+        <button class="btn" id="save-token" type="button">保存 token</button>
+        <button class="btn" id="clear-token" type="button">清空 token</button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="summary">
+      <span>云端隐藏：<strong id="count">0</strong> 项</span>
+      <span id="status">正在加载...</span>
+    </div>
+    <div class="notice" id="notice"></div>
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <div class="empty" id="empty">没有云端删除记录。</div>
+  </main>
+  <script>
+    const grid = document.getElementById('grid');
+    const count = document.getElementById('count');
+    const statusText = document.getElementById('status');
+    const notice = document.getElementById('notice');
+    const empty = document.getElementById('empty');
+    const refresh = document.getElementById('refresh');
+    const tokenInput = document.getElementById('token');
+    const tokenStorageKey = 'galleryAdminToken';
+
+    tokenInput.value = localStorage.getItem(tokenStorageKey) || '';
+
+    function showNotice(message, isError = false) {
+      notice.textContent = message;
+      notice.classList.toggle('is-error', isError);
+      notice.style.display = message ? 'block' : 'none';
+    }
+
+    function resolveThumb(record) {
+      const thumb = record.thumb_url || '';
+      if (!thumb) return '';
+      if (/^https?:\/\//i.test(thumb)) return thumb;
+      if (thumb.startsWith('/')) return thumb;
+      return `/reference_gallery/${thumb}`;
+    }
+
+    function safeUrl(value) {
+      const url = String(value || '').trim();
+      if (!url) return '';
+      if (url.startsWith('/')) return url;
+      return /^https?:\/\//i.test(url) ? url : '';
+    }
+
+    function escapeHtml(value) {
+      return String(value || '').replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char]));
+    }
+
+    function renderRecord(record) {
+      const title = record.title || record.id;
+      const thumb = safeUrl(resolveThumb(record));
+      const productUrl = safeUrl(record.product_url);
+      const deletedAt = record.deleted_at ? new Date(record.deleted_at).toLocaleString() : '未知时间';
+      const article = document.createElement('article');
+      article.innerHTML = `
+        <div class="thumb">${thumb ? `<img src="${escapeHtml(thumb)}" alt="${escapeHtml(title)}" loading="lazy" decoding="async">` : '<div class="fallback">无缩略图</div>'}</div>
+        <div class="body">
+          <h2>${escapeHtml(title)}</h2>
+          <div class="meta">${escapeHtml(record.source || '未知来源')} · ${escapeHtml(record.category || '未分类')}</div>
+          <div class="meta">ID：${escapeHtml(record.id)}</div>
+          <div class="meta">删除时间：${escapeHtml(deletedAt)}</div>
+          <div class="actions">
+            ${productUrl ? `<a class="link-btn" href="${escapeHtml(productUrl)}" target="_blank" rel="noopener noreferrer">产品页</a>` : ''}
+            <button class="btn danger" type="button" data-restore="${escapeHtml(record.id)}">恢复</button>
+          </div>
+        </div>
+      `;
+      return article;
+    }
+
+    async function loadHidden() {
+      statusText.textContent = '正在加载...';
+      showNotice('');
+      refresh.disabled = true;
+      try {
+        const response = await fetch('/api/hidden', { cache: 'no-store' });
+        const data = await response.json();
+        if (!response.ok || !data.ok) throw new Error(data.message || data.error || '读取失败');
+
+        grid.innerHTML = '';
+        const records = Array.isArray(data.records) ? data.records : [];
+        count.textContent = records.length;
+        for (const record of records) grid.appendChild(renderRecord(record));
+        empty.style.display = records.length ? 'none' : 'block';
+        statusText.textContent = `最后刷新：${new Date().toLocaleTimeString()}`;
+      } catch (error) {
+        count.textContent = '0';
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        statusText.textContent = '加载失败';
+        showNotice(`读取云端删除记录失败：${error.message}`, true);
+      } finally {
+        refresh.disabled = false;
+      }
+    }
+
+    async function restoreItem(id, button) {
+      if (!window.confirm(`确认恢复 ${id} 吗？`)) return;
+      button.disabled = true;
+      button.textContent = '恢复中';
+      try {
+        const token = tokenInput.value.trim();
+        const response = await fetch('/api/restore', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(token ? { Authorization: `Bearer ${token}` } : {})
+          },
+          body: JSON.stringify({ id })
+        });
+        const data = await response.json();
+        if (!response.ok || !data.ok) throw new Error(data.message || data.error || '恢复失败');
+        showNotice(`已恢复：${id}`);
+        await loadHidden();
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = '恢复';
+        showNotice(`恢复失败：${error.message}`, true);
+      }
+    }
+
+    grid.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-restore]');
+      if (!button) return;
+      restoreItem(button.dataset.restore, button);
+    });
+
+    refresh.addEventListener('click', loadHidden);
+    document.getElementById('save-token').addEventListener('click', () => {
+      localStorage.setItem(tokenStorageKey, tokenInput.value.trim());
+      showNotice('后台 token 已保存到当前浏览器。');
+    });
+    document.getElementById('clear-token').addEventListener('click', () => {
+      tokenInput.value = '';
+      localStorage.removeItem(tokenStorageKey);
+      showNotice('后台 token 已清空。');
+    });
+
+    loadHidden();
+  </script>
+</body>
+</html>

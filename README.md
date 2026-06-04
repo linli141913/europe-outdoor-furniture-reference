@@ -58,11 +58,44 @@ git push origin main
 4. 在 Vercel 里连接这个 GitHub 仓库，Production Branch 选择 `main`。
 5. 以后每次推送 `main`，Vercel 自动重新发布。
 
-当前站点是静态发布：根目录 `index.html` 会跳转到 `reference_gallery/index.html`，`/favorites` 会指向 `reference_gallery/favorites.html`。本地运行 `scripts/gallery_server.py` 时，收藏和删除会写入本地 JSON；发布到 Vercel 后，收藏和删除会使用浏览器本地存储，删除会在当前浏览器中隐藏卡片。
+当前站点主要是静态发布：根目录 `index.html` 会跳转到 `reference_gallery/index.html`，`/favorites` 会指向 `reference_gallery/favorites.html`，`/admin.html` 是云端删除管理后台。本地运行 `scripts/gallery_server.py` 时，收藏和删除会写入本地 JSON；发布到 Vercel 后，删除会优先写入 Upstash Redis，并在所有浏览器里隐藏同一产品。如果 API 或 Redis 未配置，页面会退回浏览器本地存储，只隐藏当前浏览器里的卡片。
 
-## 同步网页端删除
+## 云端删除同步
 
-如果在 Vercel 网页上删除了卡片，需要同步到本地项目：
+Vercel 需要配置两个 Upstash Redis 环境变量：
+
+```bash
+UPSTASH_REDIS_REST_URL=...
+UPSTASH_REDIS_REST_TOKEN=...
+```
+
+可选配置：
+
+```bash
+GALLERY_ADMIN_TOKEN=...
+```
+
+如果配置了 `GALLERY_ADMIN_TOKEN`，管理后台恢复产品时需要填写 token。
+
+线上接口：
+
+- `POST /api/delete`：产品页删除按钮调用，写入云端隐藏记录。
+- `GET /api/hidden`：图库加载和本地同步脚本调用，读取所有隐藏 ID。
+- `POST /api/restore`：管理后台调用，恢复误删产品。
+
+本地同步云端删除：
+
+```bash
+python3 scripts/sync_deletions.py --preview
+python3 scripts/sync_deletions.py --apply
+git add reference_gallery
+git commit -m "Apply cloud gallery deletions"
+git push origin main
+```
+
+## 浏览器本地删除兜底
+
+如果 Redis 没配置或 API 失败，网页会继续把删除记录存在当前浏览器。此时可以用旧的导出方式同步到本地项目：
 
 1. 在网页右上角点击 `导出删除清单`，浏览器会下载 `gallery-delete-sync-*.json`。
 2. 在本地项目运行：

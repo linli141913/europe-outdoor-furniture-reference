@@ -31,6 +31,7 @@ CSV_OUT = OUT_DIR / "gallery.csv"
 HTML_OUT = OUT_DIR / "index.html"
 FAVORITES_HTML_OUT = OUT_DIR / "favorites.html"
 FAVORITES_JSON = OUT_DIR / "favorites.json"
+APP_JS_OUT = OUT_DIR / "app.js"
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -837,6 +838,7 @@ def write_html(entries: list[dict]) -> None:
         <nav class="page-nav" aria-label="页面切换">
           <a class="nav-link{all_active}" href="index.html">全部产品</a>
           <a class="nav-link{favorites_active}" href="favorites.html">收藏夹 <span id="favorite-count" data-count="{len(favorites)}">{len(favorites)}</span></a>
+          <a class="nav-link" href="/admin.html">管理后台</a>
           <button class="nav-link sync-action" id="export-deletes" type="button">导出删除清单</button>
           <button class="nav-link sync-action" id="clear-deletes" type="button">恢复网页删除</button>
         </nav>
@@ -1212,6 +1214,8 @@ def write_html(entries: list[dict]) -> None:
     const pageKind = document.body.dataset.page || 'index';
     const favoriteStorageKey = 'productReferenceFavorites';
     const deletedStorageKey = 'productReferenceDeleted';
+    const cloudHiddenEndpoint = '/api/hidden';
+    const cloudDeleteEndpoint = '/api/delete';
     const search = document.getElementById('search');
     const reset = document.getElementById('reset');
     const exportDeletes = document.getElementById('export-deletes');
@@ -1259,6 +1263,7 @@ def write_html(entries: list[dict]) -> None:
 
     let storedFavorites = readStoredFavorites();
     let storedDeleted = readStoredDeleted();
+    let cloudDeleted = new Set();
 
     function deleteSyncFilename() {{
       const stamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -1305,6 +1310,28 @@ def write_html(entries: list[dict]) -> None:
       storedDeleted = new Set();
       writeStoredDeleted(storedDeleted);
       window.location.reload();
+    }}
+
+    function combinedDeletedIds() {{
+      const ids = new Set(storedDeleted);
+      for (const id of cloudDeleted) ids.add(id);
+      return ids;
+    }}
+
+    function cardDeletePayload(card) {{
+      const productLink = card.querySelector('.links a[href], .thumb[href]');
+      const imageLink = card.querySelectorAll('.links a[href]')[1];
+      const image = card.querySelector('.thumb img');
+      return {{
+        id: card.dataset.id,
+        title: card.dataset.title || '',
+        source: card.dataset.source || '',
+        category: card.dataset.category || '',
+        product_url: productLink ? productLink.href : '',
+        image_url: imageLink ? imageLink.href : '',
+        thumb_url: image ? image.getAttribute('src') : '',
+        page_url: window.location.href
+      }};
     }}
 
     function applyFilters() {{
@@ -1378,9 +1405,10 @@ def write_html(entries: list[dict]) -> None:
 
     function applyStoredDeletes() {{
       let changedFavorites = false;
+      const hiddenIds = combinedDeletedIds();
       for (const card of Array.from(document.querySelectorAll('article[data-id]'))) {{
         const id = card.dataset.id;
-        if (!storedDeleted.has(id)) continue;
+        if (!hiddenIds.has(id)) continue;
         if (storedFavorites.delete(id)) changedFavorites = true;
         card.remove();
       }}
@@ -1390,6 +1418,19 @@ def write_html(entries: list[dict]) -> None:
         setFavoriteCount(storedFavorites.size);
       }}
       updateDeleteSyncControls();
+    }}
+
+    async function loadCloudDeleted() {{
+      try {{
+        const response = await fetch(cloudHiddenEndpoint, {{ cache: 'no-store' }});
+        const result = await response.json();
+        if (!response.ok || !result.ok) throw new Error(result.message || result.error || 'hidden list unavailable');
+        cloudDeleted = new Set((result.ids || []).map(String));
+        applyStoredDeletes();
+        applyFilters();
+      }} catch (error) {{
+        console.warn('Cloud delete list unavailable; using local fallback only.', error);
+      }}
     }}
 
     async function toggleFavorite(button) {{
@@ -1458,17 +1499,21 @@ def write_html(entries: list[dict]) -> None:
       button.textContent = '删除中';
       card.classList.add('is-deleting');
       try {{
-        const response = await fetch('/api/delete', {{
+        const response = await fetch(cloudDeleteEndpoint, {{
           method: 'POST',
           headers: {{ 'Content-Type': 'application/json' }},
-          body: JSON.stringify({{ id }})
+          body: JSON.stringify(cardDeletePayload(card))
         }});
         if (!response.ok) throw new Error(await response.text());
+        cloudDeleted.add(id);
         card.remove();
         cards = Array.from(document.querySelectorAll('article[data-text]'));
         resetPendingDelete();
+        if (storedFavorites.delete(id)) {{
+          writeStoredFavorites(storedFavorites);
+          setFavoriteCount(storedFavorites.size);
+        }}
         applyFilters();
-        window.location.reload();
       }} catch (error) {{
         storedDeleted.add(id);
         writeStoredDeleted(storedDeleted);
@@ -1514,14 +1559,33 @@ def write_html(entries: list[dict]) -> None:
     applyStoredDeletes();
     updateDeleteSyncControls();
     applyFilters();
+    loadCloudDeleted();
   </script>
 </body>
 </html>
 """
         return html_doc
 
-    HTML_OUT.write_text(render_page(entries, "index"), encoding="utf-8")
-    FAVORITES_HTML_OUT.write_text(render_page(entries, "favorites"), encoding="utf-8")
+    def externalize_app_script(html_doc: str) -> tuple[str, str]:
+        start_marker = "  <script>\n    const pageKind"
+        end_marker = "  </script>\n</body>"
+        start = html_doc.index(start_marker)
+        script_start = start + len("  <script>\n")
+        script_end = html_doc.index(end_marker, script_start)
+        app_js = html_doc[script_start:script_end]
+        external_html = (
+            html_doc[:start]
+            + '  <script src="app.js" defer></script>\n'
+            + html_doc[script_end + len("  </script>\n") :]
+        )
+        return external_html, app_js
+
+    index_html, app_js = externalize_app_script(render_page(entries, "index"))
+    favorites_html, _ = externalize_app_script(render_page(entries, "favorites"))
+
+    HTML_OUT.write_text(index_html, encoding="utf-8")
+    FAVORITES_HTML_OUT.write_text(favorites_html, encoding="utf-8")
+    APP_JS_OUT.write_text(app_js, encoding="utf-8")
 
 
 def card_html(entry: dict, favorites: set[str]) -> str:
