@@ -837,6 +837,8 @@ def write_html(entries: list[dict]) -> None:
         <nav class="page-nav" aria-label="页面切换">
           <a class="nav-link{all_active}" href="index.html">全部产品</a>
           <a class="nav-link{favorites_active}" href="favorites.html">收藏夹 <span id="favorite-count" data-count="{len(favorites)}">{len(favorites)}</span></a>
+          <button class="nav-link sync-action" id="export-deletes" type="button">导出删除清单</button>
+          <button class="nav-link sync-action" id="clear-deletes" type="button">恢复网页删除</button>
         </nav>
         """
         html_doc = f"""<!doctype html>
@@ -923,6 +925,14 @@ def write_html(entries: list[dict]) -> None:
       background: #e7f1ec;
       color: #14392d;
       font-weight: 700;
+    }}
+    .nav-link.sync-action {{
+      cursor: pointer;
+      font: inherit;
+    }}
+    .nav-link:disabled {{
+      cursor: not-allowed;
+      opacity: 0.48;
     }}
     .toolbar {{
       display: grid;
@@ -1204,6 +1214,8 @@ def write_html(entries: list[dict]) -> None:
     const deletedStorageKey = 'productReferenceDeleted';
     const search = document.getElementById('search');
     const reset = document.getElementById('reset');
+    const exportDeletes = document.getElementById('export-deletes');
+    const clearDeletes = document.getElementById('clear-deletes');
     let cards = Array.from(document.querySelectorAll('article[data-text]'));
     const visibleCount = document.getElementById('visible-count');
     const favoriteCount = document.getElementById('favorite-count');
@@ -1247,6 +1259,53 @@ def write_html(entries: list[dict]) -> None:
 
     let storedFavorites = readStoredFavorites();
     let storedDeleted = readStoredDeleted();
+
+    function deleteSyncFilename() {{
+      const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+      return `gallery-delete-sync-${{stamp}}.json`;
+    }}
+
+    function updateDeleteSyncControls() {{
+      const count = storedDeleted.size;
+      if (exportDeletes) {{
+        exportDeletes.disabled = count === 0;
+        exportDeletes.textContent = count ? `导出删除清单(${{count}})` : '导出删除清单';
+        exportDeletes.title = count ? '下载当前浏览器的删除清单，用于同步到本地项目' : '当前浏览器没有删除记录';
+      }}
+      if (clearDeletes) {{
+        clearDeletes.disabled = count === 0;
+        clearDeletes.title = count ? '清空当前浏览器的删除记录并刷新页面' : '当前浏览器没有删除记录';
+      }}
+    }}
+
+    function exportDeletedList() {{
+      const ids = Array.from(storedDeleted).sort();
+      if (!ids.length) return;
+      const payload = {{
+        version: 1,
+        generatedAt: new Date().toISOString(),
+        source: window.location.href,
+        storageKey: deletedStorageKey,
+        ids
+      }};
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {{ type: 'application/json' }});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = deleteSyncFilename();
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }}
+
+    function clearStoredDeletes() {{
+      if (!storedDeleted.size) return;
+      if (!window.confirm('要恢复这个浏览器里隐藏的卡片吗？这只会清空网页端删除记录，不会改本地项目。')) return;
+      storedDeleted = new Set();
+      writeStoredDeleted(storedDeleted);
+      window.location.reload();
+    }}
 
     function applyFilters() {{
       const q = search.value.trim().toLowerCase();
@@ -1330,6 +1389,7 @@ def write_html(entries: list[dict]) -> None:
         writeStoredFavorites(storedFavorites);
         setFavoriteCount(storedFavorites.size);
       }}
+      updateDeleteSyncControls();
     }}
 
     async function toggleFavorite(button) {{
@@ -1419,6 +1479,7 @@ def write_html(entries: list[dict]) -> None:
         card.remove();
         cards = Array.from(document.querySelectorAll('article[data-text]'));
         resetPendingDelete();
+        updateDeleteSyncControls();
         applyFilters();
       }}
     }}
@@ -1446,8 +1507,12 @@ def write_html(entries: list[dict]) -> None:
       if (!event.target.closest('.delete-card')) resetPendingDelete();
     }});
 
+    if (exportDeletes) exportDeletes.addEventListener('click', exportDeletedList);
+    if (clearDeletes) clearDeletes.addEventListener('click', clearStoredDeletes);
+
     applyStoredFavorites();
     applyStoredDeletes();
+    updateDeleteSyncControls();
     applyFilters();
   </script>
 </body>
