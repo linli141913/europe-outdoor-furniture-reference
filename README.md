@@ -58,4 +58,4 @@ git push origin main
 4. 在 Vercel 里连接这个 GitHub 仓库，Production Branch 选择 `main`。
 5. 以后每次推送 `main`，Vercel 自动重新发布。
 
-当前站点是静态发布：根目录 `index.html` 会跳转到 `reference_gallery/index.html`，`/favorites` 会指向 `reference_gallery/favorites.html`。本地运行 `scripts/gallery_server.py` 时，收藏和删除会写入本地 JSON；发布到 Vercel 后，收藏会使用浏览器本地存储。
+当前站点是静态发布：根目录 `index.html` 会跳转到 `reference_gallery/index.html`，`/favorites` 会指向 `reference_gallery/favorites.html`。本地运行 `scripts/gallery_server.py` 时，收藏和删除会写入本地 JSON；发布到 Vercel 后，收藏和删除会使用浏览器本地存储，删除会在当前浏览器中隐藏卡片。

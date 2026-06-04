@@ -1201,6 +1201,7 @@ def write_html(entries: list[dict]) -> None:
   <script>
     const pageKind = document.body.dataset.page || 'index';
     const favoriteStorageKey = 'productReferenceFavorites';
+    const deletedStorageKey = 'productReferenceDeleted';
     const search = document.getElementById('search');
     const reset = document.getElementById('reset');
     let cards = Array.from(document.querySelectorAll('article[data-text]'));
@@ -1212,19 +1213,40 @@ def write_html(entries: list[dict]) -> None:
     let pendingDeleteTimer = 0;
     let favoriteTotal = favoriteCount ? Number(favoriteCount.dataset.count || favoriteCount.textContent || '0') : 0;
 
-    function readStoredFavorites() {{
+    function readStoredList(key) {{
       try {{
-        return new Set(JSON.parse(localStorage.getItem(favoriteStorageKey) || '[]'));
+        return new Set(JSON.parse(localStorage.getItem(key) || '[]'));
       }} catch (error) {{
         return new Set();
       }}
     }}
 
+    function writeStoredList(key, ids) {{
+      try {{
+        localStorage.setItem(key, JSON.stringify(Array.from(ids).sort()));
+      }} catch (error) {{
+        // Ignore storage errors so the controls still work for the current page view.
+      }}
+    }}
+
+    function readStoredFavorites() {{
+      return readStoredList(favoriteStorageKey);
+    }}
+
     function writeStoredFavorites(ids) {{
-      localStorage.setItem(favoriteStorageKey, JSON.stringify(Array.from(ids).sort()));
+      writeStoredList(favoriteStorageKey, ids);
+    }}
+
+    function readStoredDeleted() {{
+      return readStoredList(deletedStorageKey);
+    }}
+
+    function writeStoredDeleted(ids) {{
+      writeStoredList(deletedStorageKey, ids);
     }}
 
     let storedFavorites = readStoredFavorites();
+    let storedDeleted = readStoredDeleted();
 
     function applyFilters() {{
       const q = search.value.trim().toLowerCase();
@@ -1293,6 +1315,21 @@ def write_html(entries: list[dict]) -> None:
       }}
       writeStoredFavorites(storedFavorites);
       if (storedFavorites.size) setFavoriteCount(storedFavorites.size);
+    }}
+
+    function applyStoredDeletes() {{
+      let changedFavorites = false;
+      for (const card of Array.from(document.querySelectorAll('article[data-id]'))) {{
+        const id = card.dataset.id;
+        if (!storedDeleted.has(id)) continue;
+        if (storedFavorites.delete(id)) changedFavorites = true;
+        card.remove();
+      }}
+      cards = Array.from(document.querySelectorAll('article[data-text]'));
+      if (changedFavorites) {{
+        writeStoredFavorites(storedFavorites);
+        setFavoriteCount(storedFavorites.size);
+      }}
     }}
 
     async function toggleFavorite(button) {{
@@ -1373,10 +1410,16 @@ def write_html(entries: list[dict]) -> None:
         applyFilters();
         window.location.reload();
       }} catch (error) {{
-        alert(`删除失败：${{error.message || error}}`);
-        card.classList.remove('is-deleting');
-        button.disabled = false;
-        resetDeleteButton(button);
+        storedDeleted.add(id);
+        writeStoredDeleted(storedDeleted);
+        if (storedFavorites.delete(id)) {{
+          writeStoredFavorites(storedFavorites);
+          setFavoriteCount(storedFavorites.size);
+        }}
+        card.remove();
+        cards = Array.from(document.querySelectorAll('article[data-text]'));
+        resetPendingDelete();
+        applyFilters();
       }}
     }}
 
@@ -1404,6 +1447,7 @@ def write_html(entries: list[dict]) -> None:
     }});
 
     applyStoredFavorites();
+    applyStoredDeletes();
     applyFilters();
   </script>
 </body>
