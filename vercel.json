@@ -4,11 +4,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/reference_gallery/index.html"
+      "destination": "/reference_gallery"
     },
     {
       "source": "/favorites",
-      "destination": "/reference_gallery/favorites.html"
+      "destination": "/reference_gallery/favorites"
     }
   ]
 }
