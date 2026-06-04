@@ -1,0 +1,316 @@
+{
+  "category": "极简几何欧洲款式",
+  "count": 50,
+  "contact_sheet": "reference_gallery/review/minimal_geometric_european_contact_sheet.jpg",
+  "visual_review_status": "reviewed_passed_after_hard_rejects",
+  "hard_rejects": [
+    "no armrests",
+    "scene/lifestyle image",
+    "multi-product set",
+    "sofa/bench/lounge/table",
+    "rattan/wicker/rope/webbing",
+    "detail/close-up/dimension/logo/swatch image"
+  ],
+  "items": [
+    {
+      "index": 1,
+      "id": "eu-minimal-audo-audo-co-dining-plastic-outdoor-armchair",
+      "title": "Audo - Co Dining Plastic Outdoor Armchair",
+      "source": "Audo"
+    },
+    {
+      "index": 2,
+      "id": "eu-minimal-houe-houe-reclip-soutdoor-dining-armchair",
+      "title": "HOUE - ReCLIP SOutdoor Dining armchair",
+      "source": "HOUE"
+    },
+    {
+      "index": 3,
+      "id": "eu-minimal-muuto-muuto-fiber-outdoor-armchair",
+      "title": "Muuto - Fiber Outdoor Armchair",
+      "source": "Muuto"
+    },
+    {
+      "index": 4,
+      "id": "eu-minimal-houe-houe-alua-outdoor-dining-armchair",
+      "title": "HOUE - ALUA Outdoor Dining armchair",
+      "source": "HOUE"
+    },
+    {
+      "index": 5,
+      "id": "eu-minimal-houe-houe-click-outdoor-dining-armchair-with-high-backrest",
+      "title": "HOUE - CLICK Outdoor Dining armchair with high backrest",
+      "source": "HOUE"
+    },
+    {
+      "index": 6,
+      "id": "eu-minimal-houe-houe-click-outdoor-dining-armchair-with-low-backrest",
+      "title": "HOUE - CLICK Outdoor Dining armchair with low backrest",
+      "source": "HOUE"
+    },
+    {
+      "index": 7,
+      "id": "eu-minimal-houe-houe-click-position-outdoor-armchair",
+      "title": "HOUE - CLICK Position outdoor armchair",
+      "source": "HOUE"
+    },
+    {
+      "index": 8,
+      "id": "eu-minimal-tradition-tradition-ville-outdoor-av34-armchair",
+      "title": "& Tradition - Ville Outdoor AV34 Armchair",
+      "source": "&Tradition"
+    },
+    {
+      "index": 9,
+      "id": "eu-minimal-kartell-kartell-audrey-garden-armchair",
+      "title": "Kartell - Audrey garden armchair",
+      "source": "Kartell"
+    },
+    {
+      "index": 10,
+      "id": "eu-minimal-kartell-kartell-cara-outdoor-armchair",
+      "title": "Kartell - Cara Outdoor Armchair",
+      "source": "Kartell"
+    },
+    {
+      "index": 11,
+      "id": "eu-minimal-hay-hay-deville-armlehnstuhl-outdoor-anthrazit",
+      "title": "HAY - Deville Armlehnstuhl, Outdoor, anthrazit",
+      "source": "HAY"
+    },
+    {
+      "index": 12,
+      "id": "eu-minimal-nardi-nardi-trill-outdoor-armchair",
+      "title": "Nardi - Trill Outdoor armchair",
+      "source": "Nardi"
+    },
+    {
+      "index": 13,
+      "id": "eu-minimal-emu-emu-apero-outdoor-armchair",
+      "title": "Emu - Apero Outdoor Armchair",
+      "source": "EMU"
+    },
+    {
+      "index": 14,
+      "id": "eu-minimal-emu-emu-riviera-armchair",
+      "title": "Emu - Riviera armchair",
+      "source": "EMU"
+    },
+    {
+      "index": 15,
+      "id": "eu-minimal-emu-emu-shine-outdoor-armchair",
+      "title": "Emu - Shine Outdoor Armchair",
+      "source": "EMU"
+    },
+    {
+      "index": 16,
+      "id": "eu-minimal-hay-hay-palissade-cantilever",
+      "title": "Hay - PALISSADE CANTILEVER",
+      "source": "HAY"
+    },
+    {
+      "index": 17,
+      "id": "eu-minimal-hay-hay-palissade",
+      "title": "Hay - PALISSADE",
+      "source": "HAY"
+    },
+    {
+      "index": 18,
+      "id": "eu-minimal-carl-hansen-son-carl-hansen-embrace-garden-armchair",
+      "title": "Carl Hansen - Embrace Garden armchair",
+      "source": "Carl Hansen & Son"
+    },
+    {
+      "index": 19,
+      "id": "eu-minimal-pedrali-pedrali-phil-a-mesh-3925",
+      "title": "Pedrali - PHILÍA MESH 3925",
+      "source": "Pedrali"
+    },
+    {
+      "index": 20,
+      "id": "eu-minimal-nardi-nardi-doga-armchair",
+      "title": "Nardi - DOGA ARMCHAIR",
+      "source": "Nardi"
+    },
+    {
+      "index": 21,
+      "id": "eu-minimal-nardi-nardi-tiberina-armchair",
+      "title": "Nardi - TIBERINA ARMCHAIR",
+      "source": "Nardi"
+    },
+    {
+      "index": 22,
+      "id": "eu-minimal-tradition-tradition-thorvald-sc95",
+      "title": "&Tradition - THORVALD SC95",
+      "source": "&Tradition"
+    },
+    {
+      "index": 23,
+      "id": "eu-minimal-winawood-sandwick-armchair",
+      "title": "Sandwick Armchair",
+      "source": "Winawood"
+    },
+    {
+      "index": 24,
+      "id": "eu-minimal-winawood-speyside-armchair",
+      "title": "Speyside Armchair",
+      "source": "Winawood"
+    },
+    {
+      "index": 25,
+      "id": "eu-minimal-pedrali-pedrali-libre-595",
+      "title": "Pedrali - LIBRE 595",
+      "source": "Pedrali"
+    },
+    {
+      "index": 26,
+      "id": "eu-minimal-hay-hay-traverse",
+      "title": "Hay - TRAVERSE",
+      "source": "HAY"
+    },
+    {
+      "index": 27,
+      "id": "eu-minimal-hay-hay-crate",
+      "title": "Hay - CRATE",
+      "source": "HAY"
+    },
+    {
+      "index": 28,
+      "id": "eu-minimal-emu-emu-twins",
+      "title": "Emu - TWINS",
+      "source": "EMU"
+    },
+    {
+      "index": 29,
+      "id": "eu-minimal-nardi-nardi-costa",
+      "title": "Nardi - COSTA",
+      "source": "Nardi"
+    },
+    {
+      "index": 30,
+      "id": "eu-minimal-nardi-nardi-net-relax",
+      "title": "Nardi - NET RELAX",
+      "source": "Nardi"
+    },
+    {
+      "index": 31,
+      "id": "eu-minimal-nardi-nardi-folio",
+      "title": "Nardi - FOLIO",
+      "source": "Nardi"
+    },
+    {
+      "index": 32,
+      "id": "eu-minimal-fermob-fermob-lodge-by-expertise-vlaemynck",
+      "title": "Fermob - LODGE BY EXPERTISE VLAEMYNCK",
+      "source": "Fermob"
+    },
+    {
+      "index": 33,
+      "id": "eu-minimal-vondom-vondom-africa",
+      "title": "Vondom - AFRICA",
+      "source": "Vondom"
+    },
+    {
+      "index": 34,
+      "id": "eu-minimal-emu-emu-round",
+      "title": "Emu - ROUND",
+      "source": "EMU"
+    },
+    {
+      "index": 35,
+      "id": "eu-minimal-fermob-fermob-pilotis",
+      "title": "Fermob - PILOTIS",
+      "source": "Fermob"
+    },
+    {
+      "index": 36,
+      "id": "eu-minimal-fermob-fermob-luxembourg",
+      "title": "Fermob - LUXEMBOURG",
+      "source": "Fermob"
+    },
+    {
+      "index": 37,
+      "id": "eu-minimal-emu-emu-ronda-x",
+      "title": "Emu - RONDA X",
+      "source": "EMU"
+    },
+    {
+      "index": 38,
+      "id": "eu-minimal-fermob-fermob-monceau",
+      "title": "Fermob - MONCEAU",
+      "source": "Fermob"
+    },
+    {
+      "index": 39,
+      "id": "eu-minimal-fermob-fermob-op-ra",
+      "title": "Fermob - OPÉRA+",
+      "source": "Fermob"
+    },
+    {
+      "index": 40,
+      "id": "eu-minimal-fermob-fermob-airloop",
+      "title": "Fermob - AIRLOOP",
+      "source": "Fermob"
+    },
+    {
+      "index": 41,
+      "id": "eu-minimal-tom-dixon-tom-dixon-groove-arm-chair",
+      "title": "Tom Dixon - GROOVE ARM CHAIR",
+      "source": "Tom Dixon"
+    },
+    {
+      "index": 42,
+      "id": "eu-minimal-trib-trib-branch",
+      "title": "TRIBÙ - BRANCH",
+      "source": "TRIBÙ"
+    },
+    {
+      "index": 43,
+      "id": "eu-minimal-trib-trib-amanu",
+      "title": "TRIBÙ - AMANU",
+      "source": "TRIBÙ"
+    },
+    {
+      "index": 44,
+      "id": "eu-minimal-trib-trib-kos",
+      "title": "TRIBÙ - KOS",
+      "source": "TRIBÙ"
+    },
+    {
+      "index": 45,
+      "id": "eu-minimal-roda-roda-teka",
+      "title": "RODA - TEKA",
+      "source": "RODA"
+    },
+    {
+      "index": 46,
+      "id": "eu-minimal-roda-roda-network-159",
+      "title": "RODA - NETWORK 159",
+      "source": "RODA"
+    },
+    {
+      "index": 47,
+      "id": "eu-minimal-roda-roda-levante",
+      "title": "RODA - LEVANTE",
+      "source": "RODA"
+    },
+    {
+      "index": 48,
+      "id": "eu-minimal-ethimo-ethimo-costes",
+      "title": "Ethimo - COSTES",
+      "source": "Ethimo"
+    },
+    {
+      "index": 49,
+      "id": "eu-minimal-ethimo-ethimo-ribot",
+      "title": "Ethimo - RIBOT",
+      "source": "Ethimo"
+    },
+    {
+      "index": 50,
+      "id": "eu-minimal-royal-botania-royal-botania-archy",
+      "title": "Royal Botania - ARCHY",
+      "source": "Royal Botania"
+    }
+  ]
+}

@@ -770,6 +770,8 @@ def stats(entries: list[dict]) -> dict:
 
 def category_sort_key(category: str) -> int:
     order = [
+        "HDPE / PE 板件可转化",
+        "极简几何欧洲款式",
         "板条 / 可转化结构",
         "塑料 / PP / 树脂",
         "金属 / 轻量庭院",
@@ -821,7 +823,7 @@ def write_html(entries: list[dict]) -> None:
         page_title = (
             "我的收藏夹"
             if page_kind == "favorites"
-            else "HDPE / PE 板件户外扶手椅真实参考图库"
+            else "户外扶手椅真实参考图库"
         )
         count_label = "款收藏" if page_kind == "favorites" else "款代表图"
         empty_text = (
@@ -1186,7 +1188,7 @@ def write_html(entries: list[dict]) -> None:
         {category_buttons}
       </div>
       <div class="note">
-        当前只保留 HDPE / PE / poly lumber / recycled plastic 方向的单把完整扶手椅产品图；不保留铝合金、金属、木材、藤编/绳编/织带、PP 树脂、一体注塑、Adirondack 大斜背、无扶手、场景图、局部图和多椅组合。同一款式的不同颜色只显示一张代表图；每张卡片都有产品名、材料/结构说明、来源、产品页链接和原图链接。
+        当前图库分为两类：HDPE / PE / poly lumber / recycled plastic 方向的板件可转化参考，以及可转化为 HDPE 设计语言的极简几何欧洲款式参考。每张卡片都保留真实产品名、材料/结构说明、来源、产品页链接和原图链接；同一款式的不同颜色只显示一张代表图。
       </div>
     </div>
   </header>

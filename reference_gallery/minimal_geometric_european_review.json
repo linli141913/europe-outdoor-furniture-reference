@@ -1,0 +1,688 @@
+{
+  "category": "极简几何欧洲款式",
+  "target_count": 50,
+  "selected_count": 50,
+  "source_counts": {
+    "Audo": 1,
+    "HOUE": 5,
+    "Muuto": 1,
+    "&Tradition": 2,
+    "Kartell": 2,
+    "HAY": 5,
+    "Nardi": 6,
+    "EMU": 6,
+    "Carl Hansen & Son": 1,
+    "Pedrali": 2,
+    "Winawood": 2,
+    "Fermob": 6,
+    "Vondom": 1,
+    "Tom Dixon": 1,
+    "TRIBÙ": 3,
+    "RODA": 3,
+    "Ethimo": 2,
+    "Royal Botania": 1
+  },
+  "selected": [
+    {
+      "index": 1,
+      "id": "eu-minimal-audo-audo-co-dining-plastic-outdoor-armchair",
+      "title": "Audo - Co Dining Plastic Outdoor Armchair",
+      "source": "Audo",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/audo-co-dining-plastic-outdoor-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100106/722479/media/Audo-Copenhagen/2024_SS/Audo-Co-Dining-Plastic-Outdoor-Armlehnstuhl-oliv-Front-frei.webp"
+    },
+    {
+      "index": 2,
+      "id": "eu-minimal-houe-houe-reclip-soutdoor-dining-armchair",
+      "title": "HOUE - ReCLIP SOutdoor Dining armchair",
+      "source": "HOUE",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/houe-reclip-soutdoor-dining-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/892534/media/HOUE/ReClips/HOUE-ReCLIPS-Outdoor-Dining-Armlehnstuhl-schwarz-Bambus.webp"
+    },
+    {
+      "index": 3,
+      "id": "eu-minimal-muuto-muuto-fiber-outdoor-armchair",
+      "title": "Muuto - Fiber Outdoor Armchair",
+      "source": "Muuto",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/muuto-fiber-outdoor-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/696824/media/muuto/Fiber-Outdoor/Muuto-Fiber-Outdoor-Armlehnstuhl-anthrazit-schwarz_2025.webp"
+    },
+    {
+      "index": 4,
+      "id": "eu-minimal-houe-houe-alua-outdoor-dining-armchair",
+      "title": "HOUE - ALUA Outdoor Dining armchair",
+      "source": "HOUE",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/houe-alua-outdoor-dining-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/817879/media/HOUE/Alua/HOUE-Alua-Outdoor-Dining-Armlehnstuhl-beige.webp"
+    },
+    {
+      "index": 5,
+      "id": "eu-minimal-houe-houe-click-outdoor-dining-armchair-with-high-backrest",
+      "title": "HOUE - CLICK Outdoor Dining armchair with high backrest",
+      "source": "HOUE",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/houe-click-outdoor-dining-armchair-with-high-backrest.html",
+      "image_url": "https://cdn.connox.com/m/100107/817936/media/HOUE/Click/HOUE-CLICK-Outdoor-Dining-Armlehnstuhl-mit-hoher-Lehne-beige.webp"
+    },
+    {
+      "index": 6,
+      "id": "eu-minimal-houe-houe-click-outdoor-dining-armchair-with-low-backrest",
+      "title": "HOUE - CLICK Outdoor Dining armchair with low backrest",
+      "source": "HOUE",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/houe-click-outdoor-dining-armchair-with-low-backrest.html",
+      "image_url": "https://cdn.connox.com/m/100107/817939/media/HOUE/Click/HOUE-CLICK-Outdoor-Dining-Armlehnstuhl-mit-niedriger-Lehne-beige.webp"
+    },
+    {
+      "index": 7,
+      "id": "eu-minimal-houe-houe-click-position-outdoor-armchair",
+      "title": "HOUE - CLICK Position outdoor armchair",
+      "source": "HOUE",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/houe-click-position-outdoor-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/817950/media/HOUE/Click/HOUE-CLICK-Position-Outdoor-Armlehnstuhl-beige.webp"
+    },
+    {
+      "index": 8,
+      "id": "eu-minimal-tradition-tradition-ville-outdoor-av34-armchair",
+      "title": "& Tradition - Ville Outdoor AV34 Armchair",
+      "source": "&Tradition",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/tradition-ville-outdoor-av34-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/706967/media/andtradition/SS24/andTradition-Ville-Outdoor-AV34-Stuhl-green.webp"
+    },
+    {
+      "index": 9,
+      "id": "eu-minimal-kartell-kartell-audrey-garden-armchair",
+      "title": "Kartell - Audrey garden armchair",
+      "source": "Kartell",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/kartell-audrey-garden-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100106/828147/media/Kartell/Audrey/Kartell-Audrey-Gartenarmlehnstuhl-beige-frontal.webp"
+    },
+    {
+      "index": 10,
+      "id": "eu-minimal-kartell-kartell-cara-outdoor-armchair",
+      "title": "Kartell - Cara Outdoor Armchair",
+      "source": "Kartell",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/kartell-cara-outdoor-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/631488/media/Kartell/2023/Kartell-Cara-Outdoor-Sessel-Gestell-weiss-matt-Bezug-grau.webp"
+    },
+    {
+      "index": 11,
+      "id": "eu-minimal-hay-hay-deville-armlehnstuhl-outdoor-anthrazit",
+      "title": "HAY - Deville Armlehnstuhl, Outdoor, anthrazit",
+      "source": "HAY",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/hay-deville-armlehnstuhl-outdoor-anthrazit.html",
+      "image_url": "https://cdn.connox.com/m/100107/880325/media/hay/Deville/HAY-Deville-Armlehnstuhl-Outdoor-anthrazit.webp"
+    },
+    {
+      "index": 12,
+      "id": "eu-minimal-nardi-nardi-trill-outdoor-armchair",
+      "title": "Nardi - Trill Outdoor armchair",
+      "source": "Nardi",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/nardi-trill-outdoor-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/814307/media/Nardi/2025-SS/Nardi-Trill-Outdoor-Armlehnstuhl-agave.webp"
+    },
+    {
+      "index": 13,
+      "id": "eu-minimal-emu-emu-apero-outdoor-armchair",
+      "title": "Emu - Apero Outdoor Armchair",
+      "source": "EMU",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/emu-apero-outdoor-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/542763/media/emu/2022/Emu-Apero-Outdoor-Armlehnstuhl-antikeisen.webp"
+    },
+    {
+      "index": 14,
+      "id": "eu-minimal-emu-emu-riviera-armchair",
+      "title": "Emu - Riviera armchair",
+      "source": "EMU",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/emu-riviera-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100106/249291/media/emu/Riviera/Emu-Riviera-Armlehenstuhl-weiss-frei.webp"
+    },
+    {
+      "index": 15,
+      "id": "eu-minimal-emu-emu-shine-outdoor-armchair",
+      "title": "Emu - Shine Outdoor Armchair",
+      "source": "EMU",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/emu-shine-outdoor-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100107/542778/media/emu/2022/Emu-Shine-Outdoor-Armlehnstuhl-Teak-schwarz.webp"
+    },
+    {
+      "index": 16,
+      "id": "eu-minimal-hay-hay-palissade-cantilever",
+      "title": "Hay - PALISSADE CANTILEVER",
+      "source": "HAY",
+      "product_url": "https://www.archiproducts.com/en/products/hay/cantilever-steel-garden-chair-with-armrests-palissade-cantilever_768113",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Hay_PALISSADE-CANTILEVER_pA6AuhibXd.jpeg"
+    },
+    {
+      "index": 17,
+      "id": "eu-minimal-hay-hay-palissade",
+      "title": "Hay - PALISSADE",
+      "source": "HAY",
+      "product_url": "https://www.archiproducts.com/en/products/hay/steel-garden-chair-with-armrests-palissade_544601",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_PALISSADE-Chair-with-armrests-Hay-544601-rel841fed81.jpg"
+    },
+    {
+      "index": 18,
+      "id": "eu-minimal-carl-hansen-son-carl-hansen-embrace-garden-armchair",
+      "title": "Carl Hansen - Embrace Garden armchair",
+      "source": "Carl Hansen & Son",
+      "product_url": "https://www.connox.com/categories/outdoor/garden-chairs/carl-hansen-embrace-garden-armchair.html",
+      "image_url": "https://cdn.connox.com/m/100106/714623/media/Carl-Hansen/2024/Carl-Hansen-Embrace-Gartenarmlehnstuhl-Teak-unbehandelt-frontal.webp"
+    },
+    {
+      "index": 19,
+      "id": "eu-minimal-pedrali-pedrali-phil-a-mesh-3925",
+      "title": "Pedrali - PHILÍA MESH 3925",
+      "source": "Pedrali",
+      "product_url": "https://www.archiproducts.com/en/products/pedrali/stackable-steel-garden-chair-with-armrests-philia-mesh-3925_785770",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Pedrali_PHILIA-MESH-3925_05rMrzxp48.jpeg"
+    },
+    {
+      "index": 20,
+      "id": "eu-minimal-nardi-nardi-doga-armchair",
+      "title": "Nardi - DOGA ARMCHAIR",
+      "source": "Nardi",
+      "product_url": "https://www.archiproducts.com/en/products/nardi/polypropylene-garden-chair-with-armrests-doga-armchair_533924",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_DOGA-ARMCHAIR-Nardi-533924-rel4e3507a8.jpg"
+    },
+    {
+      "index": 21,
+      "id": "eu-minimal-nardi-nardi-tiberina-armchair",
+      "title": "Nardi - TIBERINA ARMCHAIR",
+      "source": "Nardi",
+      "product_url": "https://www.archiproducts.com/en/products/nardi/polypropylene-garden-chair-with-armrests-tiberina-armchair_689714",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Nardi_TIBERINA_B9wC1TwgtS.jpeg"
+    },
+    {
+      "index": 22,
+      "id": "eu-minimal-tradition-tradition-thorvald-sc95",
+      "title": "&Tradition - THORVALD SC95",
+      "source": "&Tradition",
+      "product_url": "https://www.archiproducts.com/en/products/tradition/stackable-powder-coated-steel-garden-chair-with-armrests-thorvald-sc95_772095",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Tradition_THORVALD-SC95_lirQXYZikh.jpeg"
+    },
+    {
+      "index": 23,
+      "id": "eu-minimal-winawood-sandwick-armchair",
+      "title": "Sandwick Armchair",
+      "source": "Winawood",
+      "product_url": "https://winawood.co.uk/products/sandwick-armchair",
+      "image_url": "https://cdn.shopify.com/s/files/1/0968/8721/0331/files/XIAO900317.png?v=1772713475"
+    },
+    {
+      "index": 24,
+      "id": "eu-minimal-winawood-speyside-armchair",
+      "title": "Speyside Armchair",
+      "source": "Winawood",
+      "product_url": "https://winawood.co.uk/products/speyside-armchair",
+      "image_url": "https://cdn.shopify.com/s/files/1/0968/8721/0331/files/XIAO900362.jpg?v=1772712348"
+    },
+    {
+      "index": 25,
+      "id": "eu-minimal-pedrali-pedrali-libre-595",
+      "title": "Pedrali - LIBRE 595",
+      "source": "Pedrali",
+      "product_url": "https://www.archiproducts.com/en/products/pedrali/stackable-polypropylene-garden-chair-with-armrests-libre-595_785784",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Pedrali_LIBRE-595_PkOlX5ZSWC.jpeg"
+    },
+    {
+      "index": 26,
+      "id": "eu-minimal-hay-hay-traverse",
+      "title": "Hay - TRAVERSE",
+      "source": "HAY",
+      "product_url": "https://www.archiproducts.com/en/products/hay/ash-garden-chair-with-armrests-traverse_731273",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Hay_TRAVERSE_U4eFUUMWPp.jpeg"
+    },
+    {
+      "index": 27,
+      "id": "eu-minimal-hay-hay-crate",
+      "title": "Hay - CRATE",
+      "source": "HAY",
+      "product_url": "https://www.archiproducts.com/en/products/hay/pine-garden-chair-with-armrests-crate_627261",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_CRATE-Chair-Hay-627261-rel2c8691b.jpg"
+    },
+    {
+      "index": 28,
+      "id": "eu-minimal-emu-emu-twins",
+      "title": "Emu - TWINS",
+      "source": "EMU",
+      "product_url": "https://www.archiproducts.com/en/products/emu/teak-garden-chair-with-armrests-twins_596349",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_emu_Twins_SXQtFHEuJ6.jpeg"
+    },
+    {
+      "index": 29,
+      "id": "eu-minimal-nardi-nardi-costa",
+      "title": "Nardi - COSTA",
+      "source": "Nardi",
+      "product_url": "https://www.archiproducts.com/en/products/nardi/polypropylene-garden-chair-with-armrests-costa_110464",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_COSTA-Nardi-110464-rel7fde99d5.jpg"
+    },
+    {
+      "index": 30,
+      "id": "eu-minimal-nardi-nardi-net-relax",
+      "title": "Nardi - NET RELAX",
+      "source": "Nardi",
+      "product_url": "https://www.archiproducts.com/en/products/nardi/polypropylene-garden-chair-with-armrests-net-relax_240076",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_NET-RELAX-Nardi-240076-relcd27f81c.jpg"
+    },
+    {
+      "index": 31,
+      "id": "eu-minimal-nardi-nardi-folio",
+      "title": "Nardi - FOLIO",
+      "source": "Nardi",
+      "product_url": "https://www.archiproducts.com/en/products/nardi/polypropylene-garden-chair-with-armrests-folio_446773",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_garden-armchair-nardi-446773-rel84c21684.jpg"
+    },
+    {
+      "index": 32,
+      "id": "eu-minimal-fermob-fermob-lodge-by-expertise-vlaemynck",
+      "title": "Fermob - LODGE BY EXPERTISE VLAEMYNCK",
+      "source": "Fermob",
+      "product_url": "https://www.archiproducts.com/en/products/fermob/teak-garden-chair-with-armrests-lodge-by-expertise-vlaemynck_762649",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Fermob_LODGE_bxeEA1c3v.jpeg"
+    },
+    {
+      "index": 33,
+      "id": "eu-minimal-vondom-vondom-africa",
+      "title": "Vondom - AFRICA",
+      "source": "Vondom",
+      "product_url": "https://www.archiproducts.com/en/products/vondom/garden-chair-with-armrests-africa_740968",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Vondom_AFRICA_L41jTnYda.jpeg"
+    },
+    {
+      "index": 34,
+      "id": "eu-minimal-emu-emu-round",
+      "title": "Emu - ROUND",
+      "source": "EMU",
+      "product_url": "https://www.archiproducts.com/en/products/emu/stackable-garden-chair-with-armrests-round_253066",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_emu_Round_jE5m4tImh.jpeg"
+    },
+    {
+      "index": 35,
+      "id": "eu-minimal-fermob-fermob-pilotis",
+      "title": "Fermob - PILOTIS",
+      "source": "Fermob",
+      "product_url": "https://www.archiproducts.com/en/products/fermob/aluminium-garden-chair-with-armrests-pilotis_762641",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Fermob_PILOTIS_pOxLAHeUaA.jpeg"
+    },
+    {
+      "index": 36,
+      "id": "eu-minimal-fermob-fermob-luxembourg",
+      "title": "Fermob - LUXEMBOURG",
+      "source": "Fermob",
+      "product_url": "https://www.archiproducts.com/en/products/fermob/stackable-aluminium-garden-chair-with-armrests-luxembourg_81056",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_LUXEMBOURG-Chair-with-armrests-Fermob-81056-rela5d13348.jpg"
+    },
+    {
+      "index": 37,
+      "id": "eu-minimal-emu-emu-ronda-x",
+      "title": "Emu - RONDA X",
+      "source": "EMU",
+      "product_url": "https://www.archiproducts.com/en/products/emu/steel-garden-chair-with-armrests-ronda-x_470034",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_emu_Ronda-X_cGgfTqc5Fu.jpeg"
+    },
+    {
+      "index": 38,
+      "id": "eu-minimal-fermob-fermob-monceau",
+      "title": "Fermob - MONCEAU",
+      "source": "Fermob",
+      "product_url": "https://www.archiproducts.com/en/products/fermob/stackable-steel-garden-chair-with-armrests-monceau_44306",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_MONCEAU-Chair-with-armrests-Fermob-44306-rel86921246.jpg"
+    },
+    {
+      "index": 39,
+      "id": "eu-minimal-fermob-fermob-op-ra",
+      "title": "Fermob - OPÉRA+",
+      "source": "Fermob",
+      "product_url": "https://www.archiproducts.com/en/products/fermob/stackable-steel-garden-chair-with-armrests-opera_441864",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_OP%C3%89RA-Chair-with-armrests-Fermob-441864-relff9db245.jpg"
+    },
+    {
+      "index": 40,
+      "id": "eu-minimal-fermob-fermob-airloop",
+      "title": "Fermob - AIRLOOP",
+      "source": "Fermob",
+      "product_url": "https://www.archiproducts.com/en/products/fermob/steel-garden-chair-with-armrests-airloop_519915",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_AIRLOOP-Chair-with-armrests-Fermob-519915-rel6ca56b44.jpg"
+    },
+    {
+      "index": 41,
+      "id": "eu-minimal-tom-dixon-tom-dixon-groove-arm-chair",
+      "title": "Tom Dixon - GROOVE ARM CHAIR",
+      "source": "Tom Dixon",
+      "product_url": "https://www.archiproducts.com/en/products/tom-dixon/aluminium-garden-chair-groove-arm-chair_728412",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Tom-Dixon_GROOVE-ARM-CHAIR_bArDkPchOV.jpeg"
+    },
+    {
+      "index": 42,
+      "id": "eu-minimal-trib-trib-branch",
+      "title": "TRIBÙ - BRANCH",
+      "source": "TRIBÙ",
+      "product_url": "https://www.archiproducts.com/en/products/tribu/polypropylene-garden-armchair-branch_120149",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_TRIBU_BRANCH_p2zF46bMzH.jpeg"
+    },
+    {
+      "index": 43,
+      "id": "eu-minimal-trib-trib-amanu",
+      "title": "TRIBÙ - AMANU",
+      "source": "TRIBÙ",
+      "product_url": "https://www.archiproducts.com/en/products/tribu/teak-garden-chair-with-armrests-amanu_572968",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_AMANU-Garden-chair-TRIB%C3%99-572968-rel9b73d39f.jpg"
+    },
+    {
+      "index": 44,
+      "id": "eu-minimal-trib-trib-kos",
+      "title": "TRIBÙ - KOS",
+      "source": "TRIBÙ",
+      "product_url": "https://www.archiproducts.com/en/products/tribu/teak-garden-chair-with-armrests-kos_27034",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_KOS-TEAK-Garden-chair-with-armrests-TRIB%C3%99-27034-relcf58cdce.jpg"
+    },
+    {
+      "index": 45,
+      "id": "eu-minimal-roda-roda-teka",
+      "title": "RODA - TEKA",
+      "source": "RODA",
+      "product_url": "https://www.archiproducts.com/en/products/roda/teak-garden-chair-with-armrests-teka_191587",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_prodotti-191587-rel60608cbf6024466b9defc2c1bf75888a.jpg"
+    },
+    {
+      "index": 46,
+      "id": "eu-minimal-roda-roda-network-159",
+      "title": "RODA - NETWORK 159",
+      "source": "RODA",
+      "product_url": "https://www.archiproducts.com/en/products/roda/teak-garden-chair-with-armrests-network-159_362282",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_NETWORK-159-RODA-362282-rel1f875294.jpg"
+    },
+    {
+      "index": 47,
+      "id": "eu-minimal-roda-roda-levante",
+      "title": "RODA - LEVANTE",
+      "source": "RODA",
+      "product_url": "https://www.archiproducts.com/en/products/roda/teak-garden-chair-with-armrests-levante_507808",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_LEVANTE-001-RODA-507808-rel7ea60330.jpg"
+    },
+    {
+      "index": 48,
+      "id": "eu-minimal-ethimo-ethimo-costes",
+      "title": "Ethimo - COSTES",
+      "source": "Ethimo",
+      "product_url": "https://www.archiproducts.com/en/products/ethimo/teak-garden-chair-with-armrests-costes_118225",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_prodotti-118225-rel59df754396734c31bc007d1f21bfc733.jpg"
+    },
+    {
+      "index": 49,
+      "id": "eu-minimal-ethimo-ethimo-ribot",
+      "title": "Ethimo - RIBOT",
+      "source": "Ethimo",
+      "product_url": "https://www.archiproducts.com/en/products/ethimo/teak-garden-chair-with-armrests-ribot_299660",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_ribot-chair-with-armrests-ethimo-299660-reld525b40d.jpg"
+    },
+    {
+      "index": 50,
+      "id": "eu-minimal-royal-botania-royal-botania-archy",
+      "title": "Royal Botania - ARCHY",
+      "source": "Royal Botania",
+      "product_url": "https://www.archiproducts.com/en/products/royal-botania/aluminium-garden-chair-with-armrests-archy_742031",
+      "image_url": "https://img.edilportale.com/product-thumbs/2b_Royal-Botania_ARCHY_itSzBoultQ.jpeg"
+    }
+  ],
+  "rejected_sample": [
+    {
+      "id": "eu-minimal-tradition-tradition-thorvald-sc95-outdoor-armchair",
+      "title": "& Tradition - Thorvald SC95 Outdoor Armchair",
+      "source": "&Tradition",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-hay-hay-palissade-armchair-anthracite",
+      "title": "HAY - Palissade Armchair, anthracite",
+      "source": "HAY",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-hay-hay-traverse-outdoor-armchair",
+      "title": "HAY - Traverse Outdoor armchair",
+      "source": "HAY",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-kartell-kartell-hiray-armchair",
+      "title": "Kartell - Hiray Armchair",
+      "source": "Kartell",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-cassia-armchair",
+      "title": "Nardi - Cassia Armchair",
+      "source": "Nardi",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-doga-relax-garden-armchair",
+      "title": "Nardi - Doga Relax Garden armchair",
+      "source": "Nardi",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-komodo-poltrona-armchair",
+      "title": "Nardi - Komodo Poltrona Armchair",
+      "source": "Nardi",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-net-relax-armchair",
+      "title": "Nardi - Net Relax Armchair",
+      "source": "Nardi",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-net-armchair",
+      "title": "Nardi - Net armchair",
+      "source": "Nardi",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-blomus-blomus-yua-wire-outdoor-armchair",
+      "title": "Blomus - Yua Wire Outdoor Armchair",
+      "source": "Blomus",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-emu-emu-darwin-armchair",
+      "title": "Emu - Darwin Armchair",
+      "source": "EMU",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-emu-emu-miky-armchair",
+      "title": "Emu - Miky Armchair",
+      "source": "EMU",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-emu-emu-mom-armchair",
+      "title": "Emu - Mom armchair",
+      "source": "EMU",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-emu-emu-rio-r50-armchair",
+      "title": "Emu - Rio r50 armchair",
+      "source": "EMU",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-emu-emu-ronda-xs-armchair",
+      "title": "Emu - Ronda XS Armchair",
+      "source": "EMU",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-emu-emu-twins-garden-armchair",
+      "title": "Emu - Twins garden armchair",
+      "source": "EMU",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-carl-hansen-son-carl-hansen-ah502-garden-arm-chair",
+      "title": "Carl Hansen - AH502 garden arm chair",
+      "source": "Carl Hansen & Son",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-cassia-armchair",
+      "title": "Nardi - CASSIA ARMCHAIR",
+      "source": "Nardi",
+      "origin": "archiproducts",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-trill-armchair",
+      "title": "Nardi - TRILL ARMCHAIR",
+      "source": "Nardi",
+      "origin": "archiproducts",
+      "reason": "duplicate model or product URL"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-net",
+      "title": "Nardi - NET",
+      "source": "Nardi",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-bora",
+      "title": "Nardi - BORA",
+      "source": "Nardi",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-palma",
+      "title": "Nardi - PALMA",
+      "source": "Nardi",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-nardi-nardi-riva",
+      "title": "Nardi - RIVA",
+      "source": "Nardi",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-emu-emu-star",
+      "title": "Emu - STAR",
+      "source": "EMU",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-emu-emu-sole",
+      "title": "Emu - SOLE",
+      "source": "EMU",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-fermob-fermob-cadiz",
+      "title": "Fermob - CADIZ",
+      "source": "Fermob",
+      "origin": "archiproducts",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-emu-emu-terramare",
+      "title": "Emu - TERRAMARE",
+      "source": "EMU",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-emu-emu-lyze",
+      "title": "Emu - LYZE",
+      "source": "EMU",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-emu-emu-caf",
+      "title": "Emu - CAFÉ",
+      "source": "EMU",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-emu-emu-riviera",
+      "title": "Emu - RIVIERA",
+      "source": "EMU",
+      "origin": "archiproducts",
+      "reason": "duplicate model or product URL"
+    },
+    {
+      "id": "eu-minimal-emu-emu-athena",
+      "title": "Emu - ATHENA",
+      "source": "EMU",
+      "origin": "archiproducts",
+      "reason": "source limit 6"
+    },
+    {
+      "id": "eu-minimal-terra-outdoor-reclips-dining-arm-chair-black-bamboo",
+      "title": "ReClips Dining Arm Chair - Black / Bamboo",
+      "source": "Terra Outdoor",
+      "origin": "history",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-s-cab-s-cab-koala",
+      "title": "S-CAB - KOALA",
+      "source": "S-CAB",
+      "origin": "archiproducts",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-trib-trib-ukiyo",
+      "title": "TRIBÙ - UKIYO",
+      "source": "TRIBÙ",
+      "origin": "archiproducts",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-trib-trib-nomad",
+      "title": "TRIBÙ - NOMAD",
+      "source": "TRIBÙ",
+      "origin": "archiproducts",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-roda-roda-piper-021",
+      "title": "RODA - PIPER 021",
+      "source": "RODA",
+      "origin": "archiproducts",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    },
+    {
+      "id": "eu-minimal-ethimo-ethimo-patio",
+      "title": "Ethimo - PATIO",
+      "source": "Ethimo",
+      "origin": "archiproducts",
+      "reason": "manual visual reject: scene/multi-product/detail/lounge-like"
+    }
+  ]
+}
