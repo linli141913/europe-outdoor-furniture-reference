@@ -62,11 +62,11 @@ git push origin main
 
 ## 云端删除同步
 
-Vercel 需要配置两个 Upstash Redis 环境变量：
+Vercel Marketplace 会自动注入 Upstash Redis 环境变量：
 
 ```bash
-UPSTASH_REDIS_REST_URL=...
-UPSTASH_REDIS_REST_TOKEN=...
+KV_REST_API_URL=...
+KV_REST_API_TOKEN=...
 ```
 
 可选配置：

@@ -302,7 +302,7 @@
 
     function cloudErrorMessage(data) {
       if (data && data.error === 'upstash_not_configured') {
-        return '云端 Redis 还没配置。请在 Vercel 环境变量里添加 UPSTASH_REDIS_REST_URL 和 UPSTASH_REDIS_REST_TOKEN，重新部署后后台就能读取删除记录。';
+        return '云端 Redis 还没配置。请确认 Vercel 环境变量里已有 KV_REST_API_URL 和 KV_REST_API_TOKEN，重新部署后后台就能读取删除记录。';
       }
       return (data && (data.message || data.error)) || '读取失败';
     }

@@ -1263,7 +1263,7 @@ def write_html(entries: list[dict]) -> None:
       try {{
         const result = await response.clone().json();
         if (result.error === 'upstash_not_configured') {{
-          return '云端删除服务还没配置 Upstash Redis 环境变量。请先在 Vercel 配置 UPSTASH_REDIS_REST_URL 和 UPSTASH_REDIS_REST_TOKEN。';
+          return '云端删除服务还没配置 Redis 环境变量。请确认 Vercel 已有 KV_REST_API_URL 和 KV_REST_API_TOKEN。';
         }}
         return result.message || result.error || `请求失败：${{response.status}}`;
       }} catch (error) {{
