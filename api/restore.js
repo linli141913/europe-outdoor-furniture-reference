@@ -49,6 +49,6 @@ module.exports = async function handler(req, res) {
       restored: true,
     });
   } catch (error) {
-    sendJson(res, 500, errorPayload(error));
+    sendJson(res, error.code === "upstash_not_configured" ? 503 : 500, errorPayload(error));
   }
 };

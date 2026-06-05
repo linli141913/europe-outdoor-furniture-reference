@@ -300,6 +300,13 @@
       return article;
     }
 
+    function cloudErrorMessage(data) {
+      if (data && data.error === 'upstash_not_configured') {
+        return '云端 Redis 还没配置。请在 Vercel 环境变量里添加 UPSTASH_REDIS_REST_URL 和 UPSTASH_REDIS_REST_TOKEN，重新部署后后台就能读取删除记录。';
+      }
+      return (data && (data.message || data.error)) || '读取失败';
+    }
+
     async function loadHidden() {
       statusText.textContent = '正在加载...';
       showNotice('');
@@ -307,7 +314,11 @@
       try {
         const response = await fetch('/api/hidden', { cache: 'no-store' });
         const data = await response.json();
-        if (!response.ok || !data.ok) throw new Error(data.message || data.error || '读取失败');
+        if (!response.ok || !data.ok) {
+          const error = new Error(cloudErrorMessage(data));
+          error.code = data && data.error;
+          throw error;
+        }
 
         grid.innerHTML = '';
         const records = Array.isArray(data.records) ? data.records : [];
@@ -319,8 +330,8 @@
         count.textContent = '0';
         grid.innerHTML = '';
         empty.style.display = 'block';
-        statusText.textContent = '加载失败';
-        showNotice(`读取云端删除记录失败：${error.message}`, true);
+        statusText.textContent = error.code === 'upstash_not_configured' ? 'Redis 未配置' : '加载失败';
+        showNotice(error.message, true);
       } finally {
         refresh.disabled = false;
       }

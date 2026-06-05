@@ -58,7 +58,7 @@ git push origin main
 4. 在 Vercel 里连接这个 GitHub 仓库，Production Branch 选择 `main`。
 5. 以后每次推送 `main`，Vercel 自动重新发布。
 
-当前站点主要是静态发布：根目录 `index.html` 会跳转到 `reference_gallery/index.html`，`/favorites` 会指向 `reference_gallery/favorites.html`，`/admin.html` 是云端删除管理后台。本地运行 `scripts/gallery_server.py` 时，收藏和删除会写入本地 JSON；发布到 Vercel 后，删除会优先写入 Upstash Redis，并在所有浏览器里隐藏同一产品。如果 API 或 Redis 未配置，页面会退回浏览器本地存储，只隐藏当前浏览器里的卡片。
+当前站点主要是静态发布：根目录 `index.html` 会跳转到 `reference_gallery/index.html`，`/favorites` 会指向 `reference_gallery/favorites.html`，`/admin.html` 是云端删除管理后台。本地运行 `scripts/gallery_server.py` 时，收藏和删除会写入本地 JSON；发布到 Vercel 后，删除会写入 Upstash Redis，并在所有浏览器里隐藏同一产品。如果 Redis 未配置，线上删除会提示配置缺失，不会假装删除成功。
 
 ## 云端删除同步
 
@@ -90,24 +90,5 @@ python3 scripts/sync_deletions.py --preview
 python3 scripts/sync_deletions.py --apply
 git add reference_gallery
 git commit -m "Apply cloud gallery deletions"
-git push origin main
-```
-
-## 浏览器本地删除兜底
-
-如果 Redis 没配置或 API 失败，网页会继续把删除记录存在当前浏览器。此时可以用旧的导出方式同步到本地项目：
-
-1. 在网页右上角点击 `导出删除清单`，浏览器会下载 `gallery-delete-sync-*.json`。
-2. 在本地项目运行：
-
-```bash
-python3 scripts/apply_delete_sync.py --latest-download
-```
-
-3. 检查无误后提交并推送：
-
-```bash
-git add reference_gallery
-git commit -m "Apply gallery delete sync"
 git push origin main
 ```

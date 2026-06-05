@@ -1,12 +1,9 @@
     const pageKind = document.body.dataset.page || 'index';
     const favoriteStorageKey = 'productReferenceFavorites';
-    const deletedStorageKey = 'productReferenceDeleted';
     const cloudHiddenEndpoint = '/api/hidden';
     const cloudDeleteEndpoint = '/api/delete';
     const search = document.getElementById('search');
     const reset = document.getElementById('reset');
-    const exportDeletes = document.getElementById('export-deletes');
-    const clearDeletes = document.getElementById('clear-deletes');
     let cards = Array.from(document.querySelectorAll('article[data-text]'));
     const visibleCount = document.getElementById('visible-count');
     const favoriteCount = document.getElementById('favorite-count');
@@ -40,70 +37,8 @@
       writeStoredList(favoriteStorageKey, ids);
     }
 
-    function readStoredDeleted() {
-      return readStoredList(deletedStorageKey);
-    }
-
-    function writeStoredDeleted(ids) {
-      writeStoredList(deletedStorageKey, ids);
-    }
-
     let storedFavorites = readStoredFavorites();
-    let storedDeleted = readStoredDeleted();
     let cloudDeleted = new Set();
-
-    function deleteSyncFilename() {
-      const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-      return `gallery-delete-sync-${stamp}.json`;
-    }
-
-    function updateDeleteSyncControls() {
-      const count = storedDeleted.size;
-      if (exportDeletes) {
-        exportDeletes.disabled = count === 0;
-        exportDeletes.textContent = count ? `导出删除清单(${count})` : '导出删除清单';
-        exportDeletes.title = count ? '下载当前浏览器的删除清单，用于同步到本地项目' : '当前浏览器没有删除记录';
-      }
-      if (clearDeletes) {
-        clearDeletes.disabled = count === 0;
-        clearDeletes.title = count ? '清空当前浏览器的删除记录并刷新页面' : '当前浏览器没有删除记录';
-      }
-    }
-
-    function exportDeletedList() {
-      const ids = Array.from(storedDeleted).sort();
-      if (!ids.length) return;
-      const payload = {
-        version: 1,
-        generatedAt: new Date().toISOString(),
-        source: window.location.href,
-        storageKey: deletedStorageKey,
-        ids
-      };
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = deleteSyncFilename();
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-    }
-
-    function clearStoredDeletes() {
-      if (!storedDeleted.size) return;
-      if (!window.confirm('要恢复这个浏览器里隐藏的卡片吗？这只会清空网页端删除记录，不会改本地项目。')) return;
-      storedDeleted = new Set();
-      writeStoredDeleted(storedDeleted);
-      window.location.reload();
-    }
-
-    function combinedDeletedIds() {
-      const ids = new Set(storedDeleted);
-      for (const id of cloudDeleted) ids.add(id);
-      return ids;
-    }
 
     function cardDeletePayload(card) {
       const productLink = card.querySelector('.links a[href], .thumb[href]');
@@ -119,6 +54,18 @@
         thumb_url: image ? image.getAttribute('src') : '',
         page_url: window.location.href
       };
+    }
+
+    async function apiErrorMessage(response) {
+      try {
+        const result = await response.clone().json();
+        if (result.error === 'upstash_not_configured') {
+          return '云端删除服务还没配置 Upstash Redis 环境变量。请先在 Vercel 配置 UPSTASH_REDIS_REST_URL 和 UPSTASH_REDIS_REST_TOKEN。';
+        }
+        return result.message || result.error || `请求失败：${response.status}`;
+      } catch (error) {
+        return await response.text();
+      }
     }
 
     function applyFilters() {
@@ -192,10 +139,9 @@
 
     function applyStoredDeletes() {
       let changedFavorites = false;
-      const hiddenIds = combinedDeletedIds();
       for (const card of Array.from(document.querySelectorAll('article[data-id]'))) {
         const id = card.dataset.id;
-        if (!hiddenIds.has(id)) continue;
+        if (!cloudDeleted.has(id)) continue;
         if (storedFavorites.delete(id)) changedFavorites = true;
         card.remove();
       }
@@ -204,7 +150,6 @@
         writeStoredFavorites(storedFavorites);
         setFavoriteCount(storedFavorites.size);
       }
-      updateDeleteSyncControls();
     }
 
     async function loadCloudDeleted() {
@@ -216,7 +161,7 @@
         applyStoredDeletes();
         applyFilters();
       } catch (error) {
-        console.warn('Cloud delete list unavailable; using local fallback only.', error);
+        console.warn('Cloud delete list unavailable.', error);
       }
     }
 
@@ -291,7 +236,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(cardDeletePayload(card))
         });
-        if (!response.ok) throw new Error(await response.text());
+        if (!response.ok) throw new Error(await apiErrorMessage(response));
         cloudDeleted.add(id);
         card.remove();
         cards = Array.from(document.querySelectorAll('article[data-text]'));
@@ -302,17 +247,11 @@
         }
         applyFilters();
       } catch (error) {
-        storedDeleted.add(id);
-        writeStoredDeleted(storedDeleted);
-        if (storedFavorites.delete(id)) {
-          writeStoredFavorites(storedFavorites);
-          setFavoriteCount(storedFavorites.size);
-        }
-        card.remove();
-        cards = Array.from(document.querySelectorAll('article[data-text]'));
+        card.classList.remove('is-deleting');
+        button.disabled = false;
+        resetDeleteButton(button);
         resetPendingDelete();
-        updateDeleteSyncControls();
-        applyFilters();
+        window.alert(error.message || '云端删除失败，请稍后再试。');
       }
     }
 
@@ -339,11 +278,7 @@
       if (!event.target.closest('.delete-card')) resetPendingDelete();
     });
 
-    if (exportDeletes) exportDeletes.addEventListener('click', exportDeletedList);
-    if (clearDeletes) clearDeletes.addEventListener('click', clearStoredDeletes);
-
     applyStoredFavorites();
     applyStoredDeletes();
-    updateDeleteSyncControls();
     applyFilters();
     loadCloudDeleted();
