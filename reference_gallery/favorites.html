@@ -133,6 +133,10 @@
       background: #e7f1ec;
       color: #14392d;
     }
+    .chip:disabled {
+      cursor: not-allowed;
+      opacity: 0.48;
+    }
     .note {
       margin-top: 14px;
       padding: 12px 14px;
@@ -333,8 +337,8 @@
         <div>
           <h1>我的收藏夹</h1>
           <div class="subtitle stats">
-            <span><strong id="visible-count">16</strong> / 16 款收藏</span>
-            <span><strong>16</strong> 个产品页</span>
+            <span><strong id="visible-count">16</strong> / <span id="total-count">16</span> 款收藏</span>
+            <span><strong id="product-count">16</strong> 个产品页</span>
           </div>
         </div>
         

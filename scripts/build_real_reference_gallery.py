@@ -976,6 +976,10 @@ def write_html(entries: list[dict]) -> None:
       background: #e7f1ec;
       color: #14392d;
     }}
+    .chip:disabled {{
+      cursor: not-allowed;
+      opacity: 0.48;
+    }}
     .note {{
       margin-top: 14px;
       padding: 12px 14px;
@@ -1176,8 +1180,8 @@ def write_html(entries: list[dict]) -> None:
         <div>
           <h1>{page_title}</h1>
           <div class="subtitle stats">
-            <span><strong id="visible-count">{s["images"]}</strong> / {s["images"]} {count_label}</span>
-            <span><strong>{s["products"]}</strong> 个产品页</span>
+            <span><strong id="visible-count">{s["images"]}</strong> / <span id="total-count">{s["images"]}</span> {count_label}</span>
+            <span><strong id="product-count">{s["products"]}</strong> 个产品页</span>
           </div>
         </div>
         {nav}
@@ -1209,6 +1213,8 @@ def write_html(entries: list[dict]) -> None:
     const reset = document.getElementById('reset');
     let cards = Array.from(document.querySelectorAll('article[data-text]'));
     const visibleCount = document.getElementById('visible-count');
+    const totalCount = document.getElementById('total-count');
+    const productCount = document.getElementById('product-count');
     const favoriteCount = document.getElementById('favorite-count');
     const empty = document.getElementById('empty');
     let activeCategory = '';
@@ -1271,7 +1277,38 @@ def write_html(entries: list[dict]) -> None:
       }}
     }}
 
+    function cardBelongsToPage(card) {{
+      return pageKind !== 'favorites' || card.dataset.favorite === '1';
+    }}
+
+    function cardProductUrl(card) {{
+      const link = card.querySelector('.links a[href], .thumb[href]');
+      return link ? link.href : card.dataset.id;
+    }}
+
+    function refreshSummaryCounts() {{
+      const pageCards = cards.filter(cardBelongsToPage);
+      if (totalCount) totalCount.textContent = pageCards.length;
+      if (productCount) {{
+        productCount.textContent = new Set(pageCards.map(cardProductUrl)).size;
+      }}
+
+      const categoryCounts = new Map();
+      for (const card of pageCards) {{
+        const category = card.dataset.category || '';
+        categoryCounts.set(category, (categoryCounts.get(category) || 0) + 1);
+      }}
+      document.querySelectorAll('.chip[data-filter]').forEach((button) => {{
+        const count = categoryCounts.get(button.dataset.filter) || 0;
+        const countLabel = button.querySelector('span');
+        if (countLabel) countLabel.textContent = count;
+        button.disabled = count === 0;
+        button.setAttribute('aria-disabled', count === 0 ? 'true' : 'false');
+      }});
+    }}
+
     function applyFilters() {{
+      refreshSummaryCounts();
       const q = search.value.trim().toLowerCase();
       let shown = 0;
       for (const card of cards) {{
@@ -1279,7 +1316,7 @@ def write_html(entries: list[dict]) -> None:
         const category = card.dataset.category || '';
         const okSearch = !q || text.includes(q);
         const okCategory = !activeCategory || category === activeCategory;
-        const okFavorite = pageKind !== 'favorites' || card.dataset.favorite === '1';
+        const okFavorite = cardBelongsToPage(card);
         const show = okSearch && okCategory && okFavorite;
         card.style.display = show ? '' : 'none';
         if (show) shown++;
