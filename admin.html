@@ -338,7 +338,6 @@
     }
 
     async function restoreItem(id, button) {
-      if (!window.confirm(`确认恢复 ${id} 吗？`)) return;
       button.disabled = true;
       button.textContent = '恢复中';
       try {
